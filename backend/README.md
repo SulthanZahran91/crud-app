@@ -27,6 +27,12 @@ go build -o app .
 ./app
 ```
 
+Environment variables:
+- `PORT` — listen port, default `8080`
+- `DB_PATH` — SQLite file path, default `data/app.db`
+
+If `frontend/dist/index.html` exists, the backend also serves the built React app from `/` while keeping the API under `/todos`.
+
 ## Test
 
 ```bash
