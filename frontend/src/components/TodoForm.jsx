@@ -12,15 +12,46 @@ export default function TodoForm({ onAdd }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '8px', marginBottom: '16px' }}>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: 'flex',
+        gap: '8px',
+        marginBottom: '16px',
+        flexWrap: 'wrap',
+      }}
+    >
       <input
         type="text"
         value={title}
         onChange={e => setTitle(e.target.value)}
         placeholder="New todo..."
-        style={{ flex: 1, padding: '8px', fontSize: '16px' }}
+        aria-label="New todo"
+        style={{
+          flex: '1 1 200px',
+          padding: '12px',
+          fontSize: '16px',
+          minHeight: '44px',
+          border: '1px solid #ccc',
+          borderRadius: '8px',
+          boxSizing: 'border-box',
+        }}
       />
-      <button type="submit" style={{ padding: '8px 16px', cursor: 'pointer' }}>Add</button>
+      <button
+        type="submit"
+        style={{
+          padding: '12px 20px',
+          minHeight: '44px',
+          cursor: 'pointer',
+          border: 'none',
+          borderRadius: '8px',
+          background: '#1a1a1a',
+          color: '#fff',
+          fontWeight: 600,
+        }}
+      >
+        Add
+      </button>
     </form>
   )
 }
